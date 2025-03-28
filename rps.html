@@ -1,0 +1,45 @@
+<!doctype html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="en-US">
+<head>
+    <link href="css/rps.css" rel="stylesheet"/>
+    <script src="js/rps.js" defer></script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width" name="viewport"/>
+    <title>Rock Paper Scissors Game</title>
+</head>
+<body>
+<h1>Rock Paper Scissors Game</h1>
+
+<div id="music-container">
+  <div id="music-button">
+    <img id="music-icon" src="img/pause.svg" alt="pause"/>
+    <img id="play-icon" src="img/play.svg" alt="play"/>
+  </div>
+  <span id="music-tooltip">All credits for the song go to VVVVV.</span>
+</div>
+
+<table>
+    <tr>
+        <td id="win-percent"></td>
+        <td id="ai-move"></td>
+    </tr>
+    <tr>
+        <td class="button">
+            <img id="rock" src="img/rock-ico.svg" alt="Rock"/>
+        </td>
+        <td id="result-area" rowspan="3"> </td>
+    </tr>
+    <tr>
+        <td class="button">
+            <img id="paper" src="img/paper-ico.svg" alt="Paper"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="button">
+            <img id="scissors" src="img/scissors-ico.svg" alt="Scissors"/>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

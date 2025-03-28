@@ -1,0 +1,58 @@
+
+@import url(https://fonts.bunny.net/css);
+
+html, body {
+    font-family:'Courier New', Courier, monospace;
+    color: white;
+    margin: 0;
+    height: 100%;
+    background-color: #808080;
+    box-sizing: border-box;
+}
+
+a {
+    color: greenyellow;
+}
+
+body {
+    border-style: outset;
+    border-color: #141414;
+    border-width: 20px;
+    border-left: 0;
+    border-right: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    width: 400px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#images {
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image_div {
+    background-color:  	#141414;
+    border-left: 10px solid #141414;
+    border-right: 10px solid #141414;
+    border-bottom: 7px solid #141414;
+    width: 32%;
+    text-align: center;
+}
+
+.image {
+    height: 700px;
+    width: 100%;
+    object-fit: fill;
+}
+
+.img_text {
+    font-size: 18px;
+}
