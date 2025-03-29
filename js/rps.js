@@ -40,9 +40,10 @@ class MusicPlayer {
   constructor() {
     this.#song = new Audio('mp3/predestined-fate.mp3');
     this.#song.volume = 0.05;
-    document.getElementById("music-button").addEventListener('click', () => this.togglePlayButton());
-    this.#playIcon.style.visibility = 'block';
-    this.#pauseIcon.style.visibility = 'none';
+    document.getElementById("music-button").addEventListener('click',
+      () => this.togglePlayButton());
+    this.#playIcon.style.visibility = 'visible';
+    this.#pauseIcon.style.visibility = 'hidden';
   }
 
   togglePlayButton() {
@@ -83,7 +84,7 @@ function beats (playerMove) {
     return ['lost', aiMove];
 }
 
-function add_viewer (page, obj) {
+function addViewer (page, obj) {
   obj.addEventListener('click', (event) => {
     const id = event.target.id;
     const [result, aiMove] = beats(id);
@@ -92,12 +93,19 @@ function add_viewer (page, obj) {
   })
 }
 
-function main() {
-    const page = new WebPage()
-  new MusicPlayer()
-  const buttons = [...page.buttons];
-  buttons.forEach(button => {add_viewer(page, button)});
+function startupMusic(musicPlayer) {
+  document.addEventListener('click', function playMusicOnce() {
+    musicPlayer.togglePlayButton();
+    document.removeEventListener('click', playMusicOnce);
+  }, { once: true });
 }
 
+function main() {
+    const page = new WebPage()
+  const player = new MusicPlayer()
+  const buttons = [...page.buttons];
+  buttons.forEach(button => {addViewer(page, button)});
+  startupMusic(player);
+}
 
 main()
